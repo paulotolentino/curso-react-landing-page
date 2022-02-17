@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import { Table, Table2Columns, AddMargin, MainCard } from "./home.main.styles";
 import { CommentsList } from "../../components/CommentsList/index";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 type HomeType = {};
 
@@ -18,6 +20,7 @@ const Home: React.FC<HomeType> = () => {
   return (
     <>
       <AddMargin>
+        <Header />
         <h1>{t("title")}</h1>
         <hr />
         <Table>
@@ -37,6 +40,7 @@ const Home: React.FC<HomeType> = () => {
       </AddMargin>
       <Row>HOME</Row>
       <CommentsList />
+      <Footer />
     </>
   );
 };
