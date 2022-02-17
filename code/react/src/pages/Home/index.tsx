@@ -1,5 +1,4 @@
 import React from "react";
-import { Row } from "antd";
 import { useTranslation } from "react-i18next";
 
 import { Table, Table2Columns, AddMargin, MainCard } from "./home.main.styles";
