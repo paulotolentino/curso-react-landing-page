@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "antd";
 import { useTranslation } from "react-i18next";
 
-import { Table, Table2Columns, AddMargin, MainForm } from "./home.main.styles";
+import { Table, Table2Columns, AddMargin, MainCard } from "./home.main.styles";
 import { CommentsList } from "../../components/CommentsList/index";
 
 type HomeType = {};
@@ -28,9 +28,9 @@ const Home: React.FC<HomeType> = () => {
             </AddMargin>
           </Table2Columns>
           <Table2Columns>
-            <MainForm>
+            <MainCard>
               <button onClick={handleSignUp}>{t("main.signup")}</button>
-            </MainForm>
+            </MainCard>
           </Table2Columns>
         </Table>
         <hr />
