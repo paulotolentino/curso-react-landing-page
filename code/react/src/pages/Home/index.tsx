@@ -19,8 +19,8 @@ const Home: React.FC<HomeType> = () => {
 
   return (
     <div className="home">
+      <Header />
       <AddMargin>
-        <Header />
         <h1>{t("title")}</h1>
         <hr />
         <Table>
@@ -38,7 +38,6 @@ const Home: React.FC<HomeType> = () => {
         </Table>
         <hr />
       </AddMargin>
-      <Row>HOME</Row>
       <CommentsList />
       <Footer />
     </div>
