@@ -1,6 +1,9 @@
 import React from "react";
+import { Row } from "antd";
 import { useTranslation } from "react-i18next";
+
 import { Table, Table2Columns, AddMargin, MainForm } from "./home.main.styles";
+import { CommentsList } from "../../components/CommentsList/index";
 
 type HomeType = {};
 
@@ -32,6 +35,8 @@ const Home: React.FC<HomeType> = () => {
         </Table>
         <hr />
       </AddMargin>
+      <Row>HOME</Row>
+      <CommentsList />
     </>
   );
 };
