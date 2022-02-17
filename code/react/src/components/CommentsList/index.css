@@ -1,7 +1,21 @@
-.ant-comment-content-author-name,
-.ant-comment-content-author-time,
-.ant-comment-content-detail {
-  color: #a8a8b3;
+h1 {
+  font-size: 5.4rem !important;
+}
+
+p {
+  color: #a8a8b3 !important;
+  font-size: 1rem;
+}
+
+img,
+.ant-avatar-image {
+  width: 4.4rem !important;
+  height: 4.4rem !important;
+}
+
+.ant-typography {
+  color: white !important;
+  font-size: 1.6rem;
 }
 
 .ant-comment-content-author {
@@ -14,8 +28,15 @@
 
 .comment-section {
   background-color: #121214;
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  padding: 3rem 0;
 }
 
-.ant-typography {
-  color: white;
+.comments-call,
+.comments-list {
+  align-items: center;
+  margin: 0;
+  padding: 0 5rem;
 }
