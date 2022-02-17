@@ -1,17 +1,16 @@
 import React from "react";
-import { Row } from "antd";
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { CommentsList } from "../../components/CommentsList/index";
 
 type HomeType = {};
 
-const Home: React.FC<HomeType> = () => {
-  return (
-    <>
-      <Row>HOME</Row>
-      <CommentsList />
-    </>
-  );
-};
+const Home: React.FC<HomeType> = () => (
+  <>
+    <Header />
+    <CommentsList />
+    <Footer />
+  </>
+);
 
 export default Home;
