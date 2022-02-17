@@ -1,0 +1,21 @@
+.ant-comment-content-author-name,
+.ant-comment-content-author-time,
+.ant-comment-content-detail {
+  color: #a8a8b3;
+}
+
+.ant-comment-content-author {
+  height: 1.5rem;
+}
+
+.ant-comment-content-detail {
+  max-width: 40rem;
+}
+
+.comment-section {
+  background-color: #121214;
+}
+
+.ant-typography {
+  color: white;
+}
