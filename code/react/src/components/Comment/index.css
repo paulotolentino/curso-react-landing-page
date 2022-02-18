@@ -1,9 +1,3 @@
-p,
-span {
-  color: #a8a8b3 !important;
-  font-size: 1rem;
-}
-
 img,
 .ant-avatar-image {
   width: 4.4rem !important;
@@ -16,6 +10,12 @@ img,
 
 .ant-comment-content-detail {
   max-width: 40rem;
+}
+
+.ant-comment-content-detail p,
+.ant-comment-content-author span {
+  color: #a8a8b3 !important;
+  font-size: 1rem;
 }
 
 .comment-section {

@@ -33,10 +33,8 @@ export const AddMargin = styled.div`
   margin: 1rem;
 `;
 
-export const MainCard = styled.form`
+export const MainCard = styled.div`
   width: 80%;
-  /* TODO remove */
-  min-height: 20rem;
 
   margin: auto;
   margin-top: 2rem;
