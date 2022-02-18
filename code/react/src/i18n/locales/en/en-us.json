@@ -11,7 +11,18 @@
     "main": {
       "title": "Lorem ipsum",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      "signup": "Sign up"
+      "name": "Name",
+      "age": "Age",
+      "cell": "Cellphone",
+      "email": "Email",
+      "signup": "Sign up",
+      "value_required": "This field is required",
+      "input": {
+        "name": "Your Name",
+        "age": "30",
+        "cell": "(99) 99999-9999",
+        "email": "something@email.com"
+      }
     },
     "comment": {
       "title": "We believe in results",

@@ -17,13 +17,13 @@ export const useGet = <T extends {}>(url: string) => {
     } catch (e) {
       setResponse(undefined);
       setError(errorHandler(e));
-      // setError(e);
     }
     setLoading(false);
   };
   useEffect(() => {
     setLoading(true);
     apiFetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return {
     response,

@@ -6,6 +6,8 @@ interface IHomeColumnStyles {
 }
 
 export const Table = styled.div`
+  background-color: ${colors.background};
+
   &:after {
     content: "";
     display: table;
@@ -16,7 +18,15 @@ export const Table = styled.div`
 export const Table2Columns = styled.div<IHomeColumnStyles>`
   width: 50%;
   float: left;
-  background-color: ${(props) => props.backgroundColor || colors.gray};
+  color: ${colors.white};
+
+  h1 {
+    color: ${colors.white};
+  }
+
+  h3 {
+    color: ${colors.white};
+  }
 `;
 
 export const AddMargin = styled.div`
