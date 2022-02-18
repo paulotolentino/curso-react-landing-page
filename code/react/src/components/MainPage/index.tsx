@@ -9,6 +9,7 @@ import {
 } from "../../pages/Home/home.main.styles";
 import { Aluno } from "../../types/aluno";
 import MainForm from "../MainForm";
+import "./index.css";
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -24,8 +25,8 @@ const MainPage = () => {
     <Table>
       <Table2Columns>
         <AddMargin>
-          <h1>{t("main.title")}</h1>
-          <h3>{t("main.description")}</h3>
+          <h1 className="main-section-title">{t("main.title")}</h1>
+          <h3 className="main-section-description">{t("main.description")}</h3>
         </AddMargin>
       </Table2Columns>
       <Table2Columns>
