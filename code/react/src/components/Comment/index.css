@@ -1,0 +1,34 @@
+img,
+.ant-avatar-image {
+  width: 4.4rem !important;
+  height: 4.4rem !important;
+}
+
+.ant-comment-content-author {
+  height: 1.5rem;
+}
+
+.ant-comment-content-detail {
+  max-width: 40rem;
+}
+
+.ant-comment-content-detail p,
+.ant-comment-content-author span {
+  color: #a8a8b3 !important;
+  font-size: 1rem;
+}
+
+.comment-section {
+  background-color: #121214;
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.comments-call,
+.comments-list {
+  align-items: center;
+  margin: 0;
+  padding: 0 5rem;
+}

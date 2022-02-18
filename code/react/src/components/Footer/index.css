@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  min-height: 10rem;
+  background-color: #121214;
+  color: #c4c4cc;
+}
+
+footer span:first-child {
+  font-size: x-large;
+}
