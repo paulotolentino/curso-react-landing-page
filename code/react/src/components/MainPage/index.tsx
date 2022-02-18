@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { usePost } from "../../hooks/customHooks";
 
 import {
   AddMargin,
@@ -11,10 +12,12 @@ import MainForm from "../MainForm";
 
 const MainPage = () => {
   const { t } = useTranslation();
+  const { apiPost } = usePost<Aluno>("/alunos");
 
-  const handleSignUp = (value: Aluno) => {
-    console.log("TODO send a post value");
-    console.log(value);
+  const handleSignUp = async (value: Aluno) => {
+    const result = await apiPost(value);
+    if (result) alert("Cadastro realizado com sucesso!");
+    else alert("Erro ao realizar o cadastro.");
   };
 
   return (

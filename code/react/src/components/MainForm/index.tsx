@@ -1,23 +1,12 @@
 import React, { useReducer } from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { Aluno } from "../../types/aluno";
+import Input, { AlunoReducer } from "../Input";
 
 type FormProps = {
   handleSignUp: (value: Aluno) => void;
 };
-
-interface AlunoReducerValue {
-  value?: string;
-  isValid?: boolean;
-}
-interface AlunoReducer {
-  nome: AlunoReducerValue;
-  idade: AlunoReducerValue;
-  telefone: AlunoReducerValue;
-  email: AlunoReducerValue;
-  isValid: AlunoReducerValue;
-}
 
 const aluno: AlunoReducer = {
   nome: { value: "" },
@@ -60,7 +49,7 @@ const alunoReducer = (
 
   let isValid = true;
   for (const [key, value] of Object.entries(state)) {
-    if (key !== "isValid") isValid = isValid && value.isValid;
+    if (key !== "isValid") isValid = !!(isValid && value.isValid);
   }
   state.isValid.value = isValid ? "true" : undefined;
 
@@ -94,63 +83,44 @@ const MainForm: React.FC<FormProps> = ({ handleSignUp }: FormProps) => {
         handleSignUp(aluno);
       }}
     >
-      <Form.Item
+      <Input
         label={t("main.name")}
-        name={`${t("main.name")}`}
         rules={[{ required: true, message: t("main.value_required") }]}
-      >
-        <Input
-          size="large"
-          placeholder={t("main.input.name")}
-          onChange={(e) => handleInputChange(e, "nome")}
-          value={alunoState.nome.value}
-        />
-      </Form.Item>
-
-      <Form.Item
+        onChange={(e) => handleInputChange(e, "nome")}
+        placeholder={t("main.input.name")}
+        size="large"
+        value={alunoState.nome.value}
+      />
+      <Input
         label={t("main.age")}
-        name={`${t("main.age")}`}
         rules={[{ required: true, message: t("main.value_required") }]}
-      >
-        <Input
-          size="large"
-          placeholder={t("main.input.age")}
-          onChange={(e) => handleInputChange(e, "idade")}
-          value={alunoState.idade.value}
-        />
-      </Form.Item>
-
-      <Form.Item
+        onChange={(e) => handleInputChange(e, "idade")}
+        placeholder={t("main.input.age")}
+        size="large"
+        value={alunoState.idade.value}
+      />
+      <Input
         label={t("main.cell")}
-        name={`${t("main.cell")}`}
         rules={[{ required: true, message: t("main.value_required") }]}
-      >
-        <Input
-          size="large"
-          placeholder={t("main.input.cell")}
-          onChange={(e) => handleInputChange(e, "telefone")}
-          value={alunoState.telefone.value}
-        />
-      </Form.Item>
-
-      <Form.Item
+        onChange={(e) => handleInputChange(e, "telefone")}
+        placeholder={t("main.input.cell")}
+        size="large"
+        value={alunoState.telefone.value}
+      />
+      <Input
         label={t("main.email")}
-        name={`${t("main.email")}`}
         rules={[{ required: true, message: t("main.value_required") }]}
-      >
-        <Input
-          size="large"
-          placeholder={t("main.input.email")}
-          onChange={(e) => handleInputChange(e, "email")}
-          value={alunoState.email.value}
-        />
-      </Form.Item>
+        onChange={(e) => handleInputChange(e, "email")}
+        placeholder={t("main.input.email")}
+        size="large"
+        value={alunoState.email.value}
+      />
 
       <Form.Item>
         <Button
           type="primary"
           htmlType="submit"
-          disabled={!!!alunoState.isValid.value}
+          disabled={!alunoState.isValid.value}
         >
           {t("main.signup")}
         </Button>
