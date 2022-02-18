@@ -1,10 +1,21 @@
 {
   "translation": {
     "title": "Bem vindo a aplicação de Cadastro de Alunos",
+    "header": {
+      "siteName": "O melhor curso de React",
+      "tab1": "Inicio",
+      "tab2": "Equipe",
+      "tab3": "Descoberta",
+      "tab4": "Programa"
+    },
     "main": {
       "title": "Lorem ipsum",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
       "signup": "Cadastrar"
+    },
+    "comment": {
+      "title": "Acreditamos em resultado",
+      "subtitle": "Fornecemos uma série de princípios de design, padrões práticos e recursos de design de alta qualidade, para ajudar as pessoas a criar seus protótipos de produtos com beleza e eficiência."
     }
   }
 }

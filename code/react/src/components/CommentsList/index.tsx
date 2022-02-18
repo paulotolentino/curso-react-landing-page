@@ -1,10 +1,13 @@
 import { Col, Row, Typography } from "antd";
+import { useTranslation } from "react-i18next";
 import Comment, { CommentaryProps } from "../Comment";
 import "./index.css";
 
 const { Text, Title } = Typography;
 
 export const CommentsList = () => {
+  const { t } = useTranslation();
+
   const comments: CommentaryProps[] = [
     {
       id: "1",
@@ -44,14 +47,10 @@ export const CommentsList = () => {
     <div className="comment-section">
       <Row className="comments-call" justify="space-between">
         <Col span={12}>
-          <Title>We believe in results</Title>
+          <Title>{t("comment.title")}</Title>
         </Col>
         <Col span={12}>
-          <Text>
-            We supply a series of design principles, practical patterns and high
-            quality design resources, to help people create their product
-            prototypes beautifully and efficiently.
-          </Text>
+          <Text>{t("comment.subtitle")}</Text>
         </Col>
       </Row>
       <Row className="comments-list" gutter={[16, 16]} justify="space-between">

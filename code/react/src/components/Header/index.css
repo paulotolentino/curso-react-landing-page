@@ -4,4 +4,18 @@
 
 .site-page-header .ant-page-header-heading-title {
   color: #e1e1e6 !important;
+  font-size: 2.5rem;
+}
+
+.ant-tabs-tab-btn {
+  color: #e1e1e6 !important;
+  font-size: 2rem;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #e0004e !important;
+}
+
+.ant-tabs-ink-bar {
+  background: #e0004e !important;
 }
