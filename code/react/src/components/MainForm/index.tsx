@@ -83,7 +83,6 @@ const MainForm: React.FC<FormProps> = ({ handleSignUp }: FormProps) => {
     <Form
       name="signUp"
       onSubmitCapture={(e) => {
-        console.log("ÄAAA");
         e.preventDefault();
         const aluno: Aluno = {
           email: alunoState.email.value || "",
