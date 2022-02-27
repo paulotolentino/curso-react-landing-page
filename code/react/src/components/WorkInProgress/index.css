@@ -1,0 +1,23 @@
+h1 {
+  font-size: 5.4rem !important;
+}
+
+.ant-typography {
+  color: #e0004e !important;
+  font-size: 1.6rem;
+}
+
+.center {
+  justify-content: center;
+}
+
+.work_in_progress {
+  width: 100% !important;
+  background-color: #121214 !important;
+}
+
+img {
+  background-color: #121214 !important;
+  width:50% !important; 
+  height:50% !important;
+}
