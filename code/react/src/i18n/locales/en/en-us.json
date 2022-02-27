@@ -5,7 +5,7 @@
       "siteName": "The Best React Course Ever",
       "tab1": "Home",
       "tab2": "Team",
-      "tab3": "Discover",
+      "tab3": "Students",
       "tab4": "Program"
     },
     "main": {
@@ -27,6 +27,9 @@
     "comment": {
       "title": "We believe in results",
       "subtitle": "We supply a series of design principles, practical patterns and high quality design resources, to help people create their product prototypes beautifully and efficiently."
+    },
+    "students": {
+      "title": "Our students"
     }
   }
 }

@@ -5,7 +5,7 @@
       "siteName": "O melhor curso de React",
       "tab1": "Inicio",
       "tab2": "Equipe",
-      "tab3": "Descoberta",
+      "tab3": "Alunos",
       "tab4": "Programa"
     },
     "main": {
@@ -27,6 +27,9 @@
     "comment": {
       "title": "Acreditamos em resultado",
       "subtitle": "Fornecemos uma série de princípios de design, padrões práticos e recursos de design de alta qualidade, para ajudar as pessoas a criar seus protótipos de produtos com beleza e eficiência."
+    },
+    "students": {
+      "title": "Nossos Alunos"
     }
   }
 }
