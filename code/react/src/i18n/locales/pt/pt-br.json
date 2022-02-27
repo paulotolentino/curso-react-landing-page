@@ -30,6 +30,7 @@
     },
     "students": {
       "title": "Nossos Alunos"
-    }
+    },
+    "loading": "Carregando..."
   }
 }
