@@ -1,25 +1,30 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
-import Home from "./pages/Home";
-import Program from "./pages/Program";
-import Students from "./pages/Students";
-import Team from "./pages/Team";
 
 const App: React.FC = () => {
-  // TODO Lazy?
-  // const lazyHome = React.lazy(() => import("./pages/Home"));
+  const { t } = useTranslation();
+
+  const LazyHome = React.lazy(() => import("./pages/Home"));
+  const LazyProgram = React.lazy(() => import("./pages/Program"));
+  const LazyStudents = React.lazy(() => import("./pages/Students"));
+  const LazyTeam = React.lazy(() => import("./pages/Team"));
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/students" element={<Students />} />
-        <Route path="/program" element={<Program />} />
-        <Route path="/team" element={<Team />} />
-      </Routes>
+      <React.Suspense fallback={<>{t("loading")}</>}>
+        <Routes>
+          <Route path="*" element={<Navigate to="/home" />} />
+          {/* Router V6:
+         https://reactrouter.com/docs/en/v6/examples/lazy-loading#preview */}
+          <Route path="/home" element={<LazyHome />} />
+          <Route path="/students" element={<LazyStudents />} />
+          <Route path="/program" element={<LazyProgram />} />
+          <Route path="/team" element={<LazyTeam />} />
+        </Routes>
+      </React.Suspense>
     </BrowserRouter>
   );
 };
