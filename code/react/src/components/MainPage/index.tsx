@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { usePost } from "../../hooks/customHooks";
+import { useQuery, useMutation } from "@apollo/client";
 
 import {
   AddMargin,
@@ -9,16 +9,25 @@ import {
 } from "../../pages/Home/home.main.styles";
 import { Aluno } from "../../types/aluno";
 import MainForm from "../MainForm";
+import { CREATE_ALUNO_MUTATION } from "../graphql/Mutations";
+
 import "./index.css";
 
 const MainPage = () => {
   const { t } = useTranslation();
-  const { apiPost } = usePost<Aluno>("/alunos");
+  const [createAluno, { error }] = useMutation(CREATE_ALUNO_MUTATION);
 
   const handleSignUp = async (value: Aluno) => {
-    const result = await apiPost(value);
-    if (result) alert("Cadastro realizado com sucesso!");
-    else alert("Erro ao realizar o cadastro.");
+    createAluno({
+      variables: {
+        ...value,
+      },
+    });
+    if (!error) alert("Cadastro realizado com sucesso!");
+    else {
+      console.error(error);
+      alert("Erro ao realizar o cadastro.");
+    }
   };
 
   return (
