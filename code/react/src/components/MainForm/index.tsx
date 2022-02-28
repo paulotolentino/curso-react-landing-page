@@ -25,7 +25,6 @@ const alunoReducer = (
     value: string;
   }
 ) => {
-  console.log("reducer", action, state);
   if (action.type === "USER_INPUT") {
     // Value
     if (action.key === "idade") {
