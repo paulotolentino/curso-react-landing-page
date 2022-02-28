@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 
 import {
   AddMargin,
