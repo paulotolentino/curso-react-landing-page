@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { PageHeader, Tabs } from "antd";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
 import "./index.css";
 
@@ -14,10 +14,10 @@ const Header: React.FC<HeaderProps> = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const path = location.pathname.split('/')[1];
+  const path = location.pathname.split("/")[1];
 
   const changePage = (key: String) => {
-    navigate(`/${key}`, {replace:true});
+    navigate(`/${key}`);
     return;
   };
 
