@@ -21,7 +21,6 @@ const StudentList: React.FC = () => {
   });
 
   useEffect(() => {
-    console.log(loading, data, error);
     if (error) {
       alert("Ops! tivemos um problema na consulta de alunos");
       console.error(error);
