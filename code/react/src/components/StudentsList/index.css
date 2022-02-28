@@ -1,0 +1,25 @@
+h1 {
+  font-size: 5.4rem !important;
+}
+
+.ant-typography {
+  color: #e0004e !important;
+  font-size: 1.6rem;
+}
+
+.students-list-section {
+  background-color: #121214;
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.students-call,
+.students-list-table {
+  justify-content: center;
+}
+
+.students-list-table > .ant-table-wrapper {
+  min-width: 80rem;
+}

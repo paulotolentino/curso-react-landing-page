@@ -19,7 +19,7 @@ img,
 }
 
 .comment-section {
-  background-color: #121214;
+  background-color: #121214 !important;
   width: 100%;
   height: max-content;
   align-items: center;

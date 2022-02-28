@@ -20,46 +20,50 @@ const aluno: AlunoReducer = {
 const alunoReducer = (
   state: AlunoReducer,
   action: {
+    type: "USER_INPUT" | "USER_CLEAR";
     key: keyof AlunoReducer;
-    type: "USER_INPUT" | "INPUT_BLUR";
     value: string;
   }
 ) => {
-  // Value
-  if (action.key === "idade") {
-    state[action.key].value = action.value.replace(/\D/g, "");
-  } else {
-    state[action.key].value = action.value;
-  }
+  if (action.type === "USER_INPUT") {
+    // Value
+    if (action.key === "idade") {
+      state[action.key].value = action.value.replace(/\D/g, "");
+    } else {
+      state[action.key].value = action.value;
+    }
 
-  // Validade
-  if (action.key === "telefone") {
-    state.telefone.isValid = state.telefone?.value
-      ? state.telefone?.value.length > 8
-      : false;
-  } else if (action.key === "email") {
-    state[action.key].isValid = !!action.value
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  } else {
-    state[action.key].isValid = !!state[action.key].value;
-  }
+    // Validade
+    if (action.key === "telefone") {
+      state.telefone.isValid = state.telefone?.value
+        ? state.telefone?.value.length > 8
+        : false;
+    } else if (action.key === "email") {
+      state[action.key].isValid = !!action.value
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    } else {
+      state[action.key].isValid = !!state[action.key].value;
+    }
 
-  let isValid = true;
-  for (const [key, value] of Object.entries(state)) {
-    if (key !== "isValid") isValid = !!(isValid && value.isValid);
+    let isValid = true;
+    for (const [key, value] of Object.entries(state)) {
+      if (key !== "isValid") isValid = !!(isValid && value.isValid);
+    }
+    state.isValid.value = isValid ? "true" : undefined;
   }
-  state.isValid.value = isValid ? "true" : undefined;
-
+  if (action.type === "USER_CLEAR") {
+    return { ...aluno };
+  }
   return { ...state };
 };
 
 const MainForm: React.FC<FormProps> = ({ handleSignUp }: FormProps) => {
   const { t } = useTranslation();
 
-  const [alunoState, dispatchAluno] = useReducer(alunoReducer, aluno);
+  const [alunoState, dispatchAluno] = useReducer(alunoReducer, { ...aluno });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -81,6 +85,7 @@ const MainForm: React.FC<FormProps> = ({ handleSignUp }: FormProps) => {
         };
 
         handleSignUp(aluno);
+        dispatchAluno({ type: "USER_CLEAR", key: "isValid", value: "false" });
       }}
     >
       <Input
