@@ -29,7 +29,11 @@
       "subtitle": "We supply a series of design principles, practical patterns and high quality design resources, to help people create their product prototypes beautifully and efficiently."
     },
     "students": {
-      "title": "Our students"
+      "title": "Our students",
+      "name": "Name",
+      "age": "Age",
+      "cell": "Cellphone",
+      "email": "Email"
     },
     "loading": "Loading..."
   }

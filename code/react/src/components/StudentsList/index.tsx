@@ -34,22 +34,22 @@ const StudentList: React.FC = () => {
 
   const columnsDefinition: ColumnDefinitionProps[] = [
     {
-      title: "Name",
+      title: t("students.name"),
       dataIndex: "name",
       key: "name",
     },
     {
-      title: "Idade",
+      title: t("students.age"),
       dataIndex: "idade",
       key: "idade",
     },
     {
-      title: "Cellphone",
+      title: t("students.cell"),
       dataIndex: "cellphone",
       key: "cellphone",
     },
     {
-      title: "Email",
+      title: t("students.email"),
       dataIndex: "email",
       key: "email",
     },

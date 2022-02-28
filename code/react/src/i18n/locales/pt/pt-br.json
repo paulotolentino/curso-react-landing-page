@@ -29,7 +29,11 @@
       "subtitle": "Fornecemos uma série de princípios de design, padrões práticos e recursos de design de alta qualidade, para ajudar as pessoas a criar seus protótipos de produtos com beleza e eficiência."
     },
     "students": {
-      "title": "Nossos Alunos"
+      "title": "Nossos Alunos",
+      "name": "Nome",
+      "age": "Idade",
+      "cell": "Celular",
+      "email": "Email"
     },
     "loading": "Carregando..."
   }
