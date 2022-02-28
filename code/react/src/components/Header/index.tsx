@@ -1,6 +1,8 @@
 import React from "react";
 import { PageHeader, Tabs } from "antd";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "./index.css";
 
@@ -10,20 +12,13 @@ const { TabPane } = Tabs;
 
 const Header: React.FC<HeaderProps> = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
 
   const changePage = (key: String) => {
-    switch (key) {
-      case "home":
-        return;
-      case "team":
-        return;
-      case "students":
-        return;
-      case "program":
-        return;
-      default:
-        return;
-    }
+    navigate(`/${key}`);
+    return;
   };
 
   return (
@@ -35,7 +30,7 @@ const Header: React.FC<HeaderProps> = () => {
       }}
       extra={
         <Tabs
-          defaultActiveKey="home"
+          defaultActiveKey={path}
           className="header-nav-tabs"
           onTabClick={changePage}
         >

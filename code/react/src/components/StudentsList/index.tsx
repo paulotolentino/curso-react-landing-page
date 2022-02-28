@@ -4,11 +4,15 @@ import { useTranslation } from "react-i18next";
 
 import { ColumnDefinitionProps, StudentProps } from "../Student";
 import "./index.css";
+import { useGet } from "../../hooks/customHooks";
+import { Aluno } from "../../types/aluno";
 
 const { Title } = Typography;
 
 const StudentList: React.FC = () => {
   const { t } = useTranslation();
+  const { response } = useGet<Aluno[]>("/alunos");
+  const alunos: Aluno[] | undefined = response?.data;
 
   const columnsDefinition: ColumnDefinitionProps[] = [
     {
@@ -28,26 +32,14 @@ const StudentList: React.FC = () => {
     },
   ];
 
-  const studentsData: StudentProps[] = [
-    {
-      key: "1",
-      name: "John Brown",
-      cellphone: "(99) 99999-9999",
-      email: "brown@mail.com",
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      cellphone: "(88) 88888-8888",
-      email: "green@mail.com",
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      cellphone: "(77) 77777-7777",
-      email: "black@mail.com",
-    },
-  ];
+  const studentsData: StudentProps[] = alunos?.map((aluno, index) => {
+    return {
+      key: aluno.id || String(index),
+      name: aluno.nome,
+      cellphone: aluno.telefone,
+      email: aluno.email,
+    }
+  }) || [];
 
   return (
     <div className="students-list-section">
